@@ -1,0 +1,13 @@
+.slides_viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .scroll_factor {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    color: white;
+    mix-blend-mode: difference;
+  }
+}

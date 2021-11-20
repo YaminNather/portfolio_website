@@ -1,0 +1,41 @@
+.slide_2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  padding: 64px 200px;
+  color: white;  
+  transition: opacity 300ms;
+
+  .heading {
+    font-size: 48px;
+    font-weight: 700;  
+    color: white;
+    transition: transform 1000ms;
+  }
+
+  .threejs_scene {
+    position: absolute !important;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .age_indicator {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 16px;
+  }
+}
+
+.slide_2_hidden {
+  @extend .slide_2;
+
+  opacity: 0.0;
+
+  .heading {
+    transform: translateX(-300px);    
+  }
+}
