@@ -1,0 +1,22 @@
+.slide_4, .slide_4_hidden {
+  .experience_card {
+    display: flex;
+    width: 100%;
+    outline: 2px solid #ff4000;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    justify-content: center;
+    transition: 300ms;    
+
+    img {
+      height: 64px;
+    }
+  }
+
+  .experience_card_unfocused {
+    @extend .experience_card;
+        
+    outline: 1px solid white;
+    opacity: 0.3;    
+  }
+}

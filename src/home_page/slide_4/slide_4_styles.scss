@@ -1,0 +1,47 @@
+.slide_4 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-left: 128px;
+  padding-right: 128px;
+  padding-top: 64px;  
+  flex-direction: column;
+  transition: opacity 300ms;  
+
+  .heading {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .experience_cards {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;       
+  }
+
+  .focused_category_name_container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .focused_category_name {
+      font-size: 32px;
+      color: #ff4000;
+    }
+  }
+
+  .age_indicator {
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+  }
+}
+
+.slide_4_hidden {
+  @extend .slide_4;
+
+  opacity: 0.0;
+}
