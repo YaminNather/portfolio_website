@@ -1,0 +1,31 @@
+@import "../../styles/global.scss";
+
+.slide_title {
+  position: relative;
+  font-size: 114px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--surface-color);
+
+  @include breakpoint(tablet) {
+    font-size: 86px;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 32px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 0.5em;
+    color: white;
+    content: 'ABOUT ME';
+    transform: translate(-50%, -50%);
+
+    .yellow {
+      color: #ffb400;
+    }
+  }
+}

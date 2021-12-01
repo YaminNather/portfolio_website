@@ -1,0 +1,99 @@
+@import "../../styles/global.scss";
+
+.about_me_slide {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 32px 128px;
+  flex-direction: column;
+    
+  @include breakpoint(tablet) {
+    padding: 32px 32px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 16px 16px;
+  }
+  
+  .content {
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    gap: 128px;    
+    align-items: center;
+    
+    @include breakpoint(tablet) {
+      margin-top: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 64px;
+    }
+
+    @include breakpoint(mobile) {
+      gap: 32px;
+    }        
+
+    .personal_info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;      
+
+      .heading {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .items {
+        margin-top: 24px;
+        display: grid;        
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 16px;
+        column-gap: 128px;
+
+        @include breakpoint(mobile) {
+          column-gap: 16px;
+        }
+
+        .item {
+          @include breakpoint(mobile) {
+            display: inline-flex;
+            flex-direction: column;
+          }          
+
+          .label {
+            color: var(--on-background-color-secondary);
+          }
+
+          .value {
+            font-weight: 500;
+          }
+        }
+      }
+
+      button {
+        margin-top: 32px;
+      }
+    }
+    
+    img {
+      flex-grow: 1;
+      height: 70%;
+      object-fit: cover;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 4px 4px 4px rgba(black, 0.4);
+  
+      @include breakpoint(tablet) {
+        flex-grow: unset;
+        width: 100%;
+        height: 360px;
+      }
+
+      @include breakpoint(mobile) {
+        height: 160px;
+      }
+    }
+  }
+}

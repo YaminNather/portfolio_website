@@ -1,5 +1,8 @@
+import { useChangeNotifier } from "change-notifier";
 import react, { useContext, useEffect } from "react";
+import SlidesController from "./slides_controller";
 import * as slides_data from "./slides_data";
+import { controllerContext } from "./slides_viewport";
 import "./slide_styles.scss";
 
 export interface SlideProps {
@@ -9,18 +12,31 @@ export interface SlideProps {
   onDeath?: () => void;
 }
 
-function calculateAgeFactor(order: number, scrollFactor: number): number {
-  if (scrollFactor < order) 
-    return 0;
+const useController = ():SlidesController => {
+  const controller: SlidesController = useContext<SlidesController | null>(controllerContext) as SlidesController;
+  useChangeNotifier(controller);
 
-  if (scrollFactor >= order + 1) 
-    return 1;
-
-  return scrollFactor - order;
-}
+  return controller;
+};
 
 const Slide: react.FC<SlideProps> = (props) => {
-  const slidesData: slides_data.Data = useContext<slides_data.Data | null>(slides_data.context) as slides_data.Data;
+  const controller: SlidesController = useController();
+
+  useEffect(
+    () => {
+      const onPageChange = (currentPage: number, previousPage: number): void => {        
+        if(props.onBirth != null && currentPage == props.order)
+          props.onBirth();
+
+        if(props.onDeath != null && previousPage == props.order)
+          props.onDeath();
+      };
+
+      controller.addPageChangeListener(onPageChange);
+
+      return () => controller.removePageChangeListener(onPageChange);
+    }    
+  );
 
   useEffect(
     () => {
@@ -30,67 +46,28 @@ const Slide: react.FC<SlideProps> = (props) => {
     [props.order]
   );
 
-  useEffect(
-    () => {
-      if (
-        slidesData.previousScrollFactor < props.order &&
-        slidesData.scrollFactor >= props.order
-      ) {
-        if (props.onBirth)
-          props.onBirth();
-      } else if (
-        slidesData.previousScrollFactor >= props.order + 1 &&
-        slidesData.scrollFactor < props.order + 1
-      ) {
-        if (props.onBirth)
-          props.onBirth();
-      }
-    }, 
-    [props, slidesData.previousScrollFactor, slidesData.scrollFactor]
-  );
+  const render = (): JSX.Element => {
+    console.log(`CustomLog: Slide ${props.order} rendered`);
 
-  useEffect(
-    () => {
-      if (
-        slidesData.previousScrollFactor < props.order + 1 &&
-        slidesData.scrollFactor >= props.order + 1 && 
-        props.order !== slidesData.slidesCount - 1
-      ) {
-        if (props.onDeath) 
-          props.onDeath();
-      } else if (
-        slidesData.previousScrollFactor >= props.order &&
-        slidesData.scrollFactor < props.order
-      ) {
-        if (props.onDeath) 
-          props.onDeath();
-      }
-    },
-    [props, slidesData.slidesCount, slidesData.previousScrollFactor, slidesData.scrollFactor]
-  );
-
-  function render(): JSX.Element {
-    const ageFactor: number = calculateAgeFactor(
-      props.order,
-      slidesData.scrollFactor
-    );
+    const ageFactor: number = calculateAgeFactor(props.order, controller.scrollFactor);
 
     return (
-      <div className="slide">
+      <div className={`slide${(isAlive()) ? '' : '_inactive'}`}>
         {props.builder(props.order, ageFactor, isAlive())}
       </div>
     );
-  }
+  };
 
-  function isAlive(): boolean {
-    let r: boolean = slidesData.scrollFactor >= props.order;
+  const isAlive = (): boolean => props.order === controller.getCurrentPage();
 
-    if(props.order === slidesData.slidesCount - 1)
-      r = r && slidesData.scrollFactor <= props.order + 1;
-    else
-      r = r && slidesData.scrollFactor < props.order + 1;
-
-    return r;
+  const calculateAgeFactor = (order: number, scrollFactor: number): number => {
+    if (scrollFactor < order) 
+      return 0;
+  
+    if (scrollFactor >= order + 1) 
+      return 1;
+  
+    return scrollFactor - order;
   }
 
   return render();

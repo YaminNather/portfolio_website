@@ -1,0 +1,120 @@
+@import './styles/global.scss';
+
+:root {
+  --background-color: #111;
+  --surface-color: rgb(37, 37, 37);
+  --on-background-color: white;
+  --on-background-color-secondary: rgb(160, 160, 160);
+  --accent-color: #ffb400;
+  --on-accent-color: white;  
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
+}
+
+
+html, body {
+  margin: 0px;
+  padding: 0px;  
+  overflow: hidden;
+  background-color: #111;
+  color: var(--on-background-color);
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // line-height: 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins";
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+button {
+  min-width: 200px;
+  min-height: 56px;
+  border-radius: 3000px;
+  outline: 2px solid #ffb400;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--on-background-color);
+  transition: 300ms;
+  
+  &:hover {
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--on-accent-color);
+    // border-width: 3px;
+  }
+}
+
+.icon_button {
+  display: flex;
+  min-width: 0px;
+  min-height: 0px;
+  width: 56px;
+  height: 56px;
+  background-color: var(--surface-color);
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+
+  @include breakpoint(mobile) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+input, textarea {
+  $min_height: 56px;
+
+  min-width: 256px;
+  min-height: $min_height;
+  background-color: var(--surface-color);
+  border: none;
+  outline: none;
+  padding-left: calc($min_height/2);
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: var(--on-background-color);
+  transition: outline 500ms;
+  color: var(--on-background-color);
+
+  &:focus, &:active {
+    outline: 1px solid var(--accent-color);
+  }  
+}
+
+input {
+  border-radius: 2000px;
+}
+
+textarea {
+  padding-top: 16px;  
+  border-radius: 32px;
+  resize: vertical;
+}

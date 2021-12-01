@@ -1,0 +1,46 @@
+.skill_bar {
+  min-width: 32px;
+
+  .svg_container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+
+    svg {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      
+      circle {
+        // stroke: grey;
+        stroke-width: 10;
+        fill: none;
+        transform: rotate(-90deg);
+        transform-origin: center;
+        
+        &:nth-child(1) {
+          stroke: var(--surface-color);
+        }
+        
+        &:nth-child(2) {
+          stroke: var(--accent-color);
+          stroke-dasharray: 440;
+        }
+      }
+    }
+
+    .bar_value {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .value {
+    margin-top: 32px;
+    text-align: center;
+  }
+}

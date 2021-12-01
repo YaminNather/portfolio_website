@@ -1,0 +1,80 @@
+@import "../../styles/global.scss";
+
+.contact_me_slide {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0px 128px;
+  
+  @include breakpoint(tablet) {
+    padding: 32px 32px;    
+  }
+
+  @include breakpoint(mobile) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .content {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 64px;
+
+    @include breakpoint(tablet) {
+      grid-template-columns: 1fr;
+    }
+
+    .contact_info_area {
+      .description_title {
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+      }
+
+      .description {
+        margin-top: 16px;
+      }
+  
+      .contact_info_items {
+        margin-top: 8px;
+        .item {
+          .leading {
+            
+          }
+  
+          .text_area {
+            .title {
+              color: var(--on-background-color-secondary);
+            }
+
+            .subtitle {
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    .contact_form {
+      $space: 32px;
+      
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;      
+      gap: 32px;
+
+      .first_row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $space;
+      }
+
+      input, textarea {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import "../../styles/global.scss";
+
+.works_slide {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0px 128px;
+  padding-top: 32px;
+
+  @include breakpoint(tablet) {
+    padding: 32px 32px;
+  }
+
+  @include breakpoint(mobile) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .heading {
+    position: relative;
+    font-size: 114px;
+    font-weight: 800;  
+    text-align: center;
+    color: rgba(white, 0.05);
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 0.5em;
+      color: white;
+      content: 'ABOUT ME';
+      transform: translate(-50%, -50%);
+
+      .yellow {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .works {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    @include breakpoint(tablet) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .work_card {
+      position: relative;
+      width: 100%;
+      height: 256px;
+      background-color: red;
+      background-size: cover;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        display: flex;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--accent-color);
+        justify-content: center;
+        align-items: center;        
+        color: white;
+        font-size: 1.2em;
+        opacity: 0.0;
+        transition: opacity 500ms;        
+      }
+      
+      &:hover::after {
+        opacity: 1.0;
+      }
+    }
+  }
+}
