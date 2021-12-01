@@ -27,7 +27,7 @@ const AboutMeSlide: FC = (props) => {
                     </div>
                     
                     <div className='item'>
-                      <span className='label'>Age:</span> <span className='value'>32</span>
+                      <span className='label'>Age:</span> <span className='value'>21</span>
                     </div>
                     
                     <div className='item'>
