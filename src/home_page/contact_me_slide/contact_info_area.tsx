@@ -1,3 +1,6 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope, faMapMarker, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
 import './contact_me_slide_styles.scss';
 
@@ -14,20 +17,20 @@ const ContactInfoArea: FC = (props) => {
         </p>
 
         <div className="contact_info_items">
-          {buildContactItems("ADDRESS", "14-4-2, Old Hospita Street, Uthamapalayam, Theni - 625533")}
+          {buildContactItems(faMapMarker, "ADDRESS", "14-4-2, Old Hospita Street, Uthamapalayam, Theni - 625533")}
           
-          {buildContactItems("MAIL ME", "2001s.yn@gmail.com")}
+          {buildContactItems(faEnvelope, "MAIL ME", "2001s.yn@gmail.com")}
           
-          {buildContactItems("Phone Number", "+91 7598385116")}
+          {buildContactItems(faPhoneAlt, "Phone Number", "+91 7598385116")}
         </div>
       </div>
     );
   }
 
-  function buildContactItems(title: string, subtitle: string): JSX.Element {
+  function buildContactItems(leading: IconProp, title: string, subtitle: string): JSX.Element {
     return (
       <div className='item'>
-        <img className="leading" src="" />
+        <FontAwesomeIcon className="leading" icon={leading} />
 
         <div className="text_area">
           <p className="title">{title}</p>
