@@ -77,8 +77,12 @@
       .first_row {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: $space;
+
+        @include breakpoint(mobile) {
+          grid-template-columns: auto;
+        }
       }
 
       input, textarea {
