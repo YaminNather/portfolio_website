@@ -17,7 +17,7 @@ const ContactInfoArea: FC = (props) => {
         </p>
 
         <div className="contact_info_items">
-          {buildContactItems(faMapMarker, "ADDRESS", "14-4-2, Old Hospita Street, Uthamapalayam, Theni - 625533")}
+          {buildContactItems(faMapMarker, "ADDRESS", "14-4-2, Old Hospital Street, Uthamapalayam, Theni - 625533")}
           
           {buildContactItems(faEnvelope, "MAIL ME", "2001s.yn@gmail.com")}
           
