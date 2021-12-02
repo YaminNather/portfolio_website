@@ -32,7 +32,7 @@ const HeroSlide: FC<HeroSlideProps> = (props) => {
                   </h1>
 
                   <p>
-                    I'm an India based web designer & front‑end developer focused on crafting clean & user‑friendly experiences, 
+                    I'm an India based full stack developer focused on crafting clean & user‑friendly experiences, 
                     I am passionate about building excellent software that improves the lives of those around me.
                   </p>
 
