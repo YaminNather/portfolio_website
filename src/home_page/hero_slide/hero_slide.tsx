@@ -28,7 +28,7 @@ const HeroSlide: FC<HeroSlideProps> = (props) => {
                 <div className='text_area'>
                   <h1 className='title'>
                     <span className='yellow'>I'M YAMIN NATHER.</span>
-                    <br/>WEB DESIGNER                  
+                    <br/>FULL STACK WEB DESIGNER                  
                   </h1>
 
                   <p>
