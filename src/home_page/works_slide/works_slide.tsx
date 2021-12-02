@@ -15,9 +15,11 @@ const WorksSlide: FC = (props) => {
              <SlideTitle title="WORKS" overlay="MY PORTFOLIO" />
               
               <div className="works">
-                {new Array(3).fill(0).map(
-                  (value) => <WorkCard title="eCommerce Website" image="https://tunis.ibthemespro.com/img/projects/project-2.jpg" />)
-                }
+                <WorkCard title="eCommerce Website" image="/works/ecommerce_website.png" />
+
+                <WorkCard title="Cryptocurrency Price Tracker" image="/works/cryptocurrency_price_tracker.png" />
+
+                <WorkCard title="eCommerce Website Backend" image="/works/ecommerce_website_backend.png" />
               </div>
             </div>
           );

@@ -55,9 +55,9 @@ export default class SlidesController extends ChangeNotifier {
 
   public removePageChangeListener = (callback: PageChangeListener): void => this.pageChangeEvent.removeListener(callback);
 
-  public getCurrentPage = (): number => {    
+  public getCurrentPage = (): number => {
     let r: number = Math.trunc(this.scrollFactor);
-    if(r == this.childrenCount)
+    if(r != 0 && r == this.childrenCount)
       r -= 1;
 
     return r;

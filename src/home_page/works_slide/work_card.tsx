@@ -8,14 +8,12 @@ export interface WorkCardProps {
 const WorkCard: FC<WorkCardProps> = (props) => {
   function render(): JSX.Element {
     return (
-      <div className="work_card" style={{backgroundImage: `url("${props.image}")`}}>
-        <style>
-          {`
-            .work_card::after {
-              content: "${props.title}"
-            }
-          `}
-        </style>
+      <div className="work_card">
+        <img src={props.image} />
+        
+        <p className="title">
+          {props.title.toUpperCase()}
+        </p>
       </div>
     );
   }
