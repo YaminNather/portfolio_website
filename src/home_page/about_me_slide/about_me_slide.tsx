@@ -51,7 +51,7 @@ const AboutMeSlide: FC = (props) => {
                     </div>
                   </div>
 
-                  <button>Download CV</button>
+                  {/* <button>Download CV</button> */}
                 </div>
 
                 <img src='/about_me/location.png' />

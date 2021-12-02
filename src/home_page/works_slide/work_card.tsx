@@ -3,18 +3,24 @@ import { FC } from "react";
 export interface WorkCardProps {
   image: string;
   title: string;
+  subtitle: string;
+  url: string;
 }
 
 const WorkCard: FC<WorkCardProps> = (props) => {
   function render(): JSX.Element {
     return (
-      <div className="work_card">
-        <img src={props.image} />
-        
-        <p className="title">
-          {props.title.toUpperCase()}
-        </p>
-      </div>
+      <a href={props.url} target="_blank">
+        <div className="work_card">
+          <img src={props.image} />
+          
+          <div className="text_area">
+            <h2>{props.title.toUpperCase()}</h2>
+
+            <p className="subtitle">{props.subtitle}</p>
+          </div>
+        </div>
+      </a>
     );
   }
 

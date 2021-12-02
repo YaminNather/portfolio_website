@@ -27,7 +27,7 @@ const SlidesViewport: FC<SlidesViewportProps> = (props) => {
       <div 
         className={classNames("slides_viewport", props.className)} 
         style={props.style} 
-        onWheel={(ev) => props.controller.onScrolled(ev.deltaX, ev.deltaY)}
+        // onWheel={(ev) => props.controller.onScrolled(ev.deltaX, ev.deltaY)}
       >
         <controllerContext.Provider value={props.controller}>
           {props.children}

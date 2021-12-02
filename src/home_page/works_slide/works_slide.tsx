@@ -15,11 +15,33 @@ const WorksSlide: FC = (props) => {
              <SlideTitle title="WORKS" overlay="MY PORTFOLIO" />
               
               <div className="works">
-                <WorkCard title="eCommerce Website" image="/works/ecommerce_website.png" />
+                <WorkCard 
+                  image="/works/ecommerce_website.png"
+                  title="eCommerce Website" 
+                  subtitle="NextJS HTML SCSS Typescript"
+                  url="https://fashion-website-snowy.vercel.app"
+                />
 
-                <WorkCard title="Cryptocurrency Price Tracker" image="/works/cryptocurrency_price_tracker.png" />
+                <WorkCard 
+                  image="/works/cryptocurrency_price_tracker.png" 
+                  title="Cryptocurrency Price Tracker"
+                  subtitle="NEXTJS HTML SCSS Typescript"
+                  url="https://crypto-price-tracker-two.vercel.app"
+                />
 
-                <WorkCard title="eCommerce Website Backend" image="/works/ecommerce_website_backend.png" />
+                <WorkCard 
+                  image="/works/ecommerce_website_backend.png" 
+                  title="eCommerce Website Backend"
+                  subtitle="ExpressJS Typescript"
+                  url="https://github.com/YaminNather/fashion_website_backend_express"
+                />
+                
+                <WorkCard 
+                  image="/works/portfolio.png" 
+                  title="eCommerce Website Backend" 
+                  subtitle="ExpressJS Typescript"
+                  url="https://portfolio-website-mauve-omega.vercel.app"
+                />
               </div>
             </div>
           );
