@@ -71,22 +71,37 @@
       display: flex;
       width: 100%;
       flex-direction: column;
-      align-items: flex-start;      
-      gap: 32px;
+      align-items: flex-start;
+
+      input, textarea {
+        margin-top: $space;
+        width: 100%;
+      }
 
       .first_row {
+        display: flex;
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: $space;
+
+        input {
+          width: auto;
+          flex-grow: 1;
+
+          &:nth-child(2) {
+            margin-left: $space;
+
+            @include breakpoint(mobile) {
+              margin-left: 0px;
+            }
+          }
+        }
 
         @include breakpoint(mobile) {
-          grid-template-columns: auto;
+          flex-direction: column;          
         }
       }
 
-      input, textarea {
-        width: 100%;
+      button {
+        margin-top: $space;
       }
     }
   }

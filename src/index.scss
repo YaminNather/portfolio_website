@@ -54,8 +54,7 @@ button {
   min-width: 200px;
   min-height: 56px;
   border-radius: 3000px;
-  outline: 2px solid #ffb400;
-  border: none;
+  border: 2px solid #ffb400;    
   background-color: transparent;
   font-family: inherit;
   font-size: inherit;
@@ -67,6 +66,7 @@ button {
     cursor: pointer;
     background-color: var(--accent-color);
     color: var(--on-accent-color);
+    outline: none;
     // border-width: 3px;
   }
 }
