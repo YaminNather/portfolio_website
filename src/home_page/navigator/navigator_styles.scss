@@ -10,7 +10,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;  
-  gap: 32px; 
 
   @include breakpoint(tablet) {
     flex-direction: row;
@@ -29,5 +28,13 @@
 
   .active {
     background-color: var(--accent-color);
+  }
+
+  .icon_button {
+    margin-left: 16px;
+
+    &:nth-child(1) {
+      margin-left: 0px;
+    }
   }
 }
