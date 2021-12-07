@@ -43,9 +43,13 @@
         gap: 32px;
 
         .item {
+          margin-top: 16px;
           display: flex;
           align-items: center;
-          gap: 16px;          
+
+          &:nth-child(1) {
+            margin-top: 0px;
+          }
 
           .leading {
             font-size: 32px;
@@ -53,6 +57,7 @@
           }
   
           .text_area {
+            margin-left: 16px;
             .title {
               color: var(--on-background-color-secondary);
             }
@@ -96,7 +101,7 @@
         }
 
         @include breakpoint(mobile) {
-          flex-direction: column;          
+          flex-direction: column;
         }
       }
 
