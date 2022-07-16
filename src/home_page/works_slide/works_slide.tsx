@@ -38,8 +38,8 @@ const WorksSlide: FC = (props) => {
                 
                 <WorkCard 
                   image="/works/portfolio.png" 
-                  title="eCommerce Website Backend" 
-                  subtitle="ExpressJS Typescript"
+                  title="Portfolio" 
+                  subtitle="React Typescript"
                   url="https://portfolio-website-mauve-omega.vercel.app"
                 />
               </div>
